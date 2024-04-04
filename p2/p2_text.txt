@@ -1,0 +1,35 @@
+
+INSERT INTO Authors(author_id, author_name)
+VALUES (1001, "Andrew S. Tanenbaum");
+INSERT INTO Authors(author_id, author_name)
+VALUES (1002, "Donald Knuth");
+INSERT INTO Authors(author_id, author_name)
+VALUES (1003, "Martin Fowler");
+
+INSERT INTO Genres(genre_id, genre_name)
+VALUES (1, "Computer Networking");
+INSERT INTO Genres(genre_id, genre_name)
+VALUES (2, "Algorithms and Data Structures");
+INSERT INTO Genres(genre_id, genre_name)
+VALUES (3, "Software Development and Design");
+
+INSERT INTO Books(book_id, title, publication_year, author_id, genre_id)
+VALUES (15, "Computer Networks", 1981, 1001, 1);
+INSERT INTO Books(book_id, title, publication_year, author_id, genre_id)
+VALUES (25, "The Art of Computer Programming", 1968, 1002, 2);
+INSERT INTO Books(book_id, title, publication_year, author_id, genre_id)
+VALUES (80, "Refactoring: Improving the Design of Existing Code", 1999, 1003, 3);
+
+INSERT INTO Users(user_id, username, email)
+VALUES (10008, "Steve Roney", "steve@gmail.com");
+INSERT INTO Users(user_id, username, email)
+VALUES (10745, "Denis Carrager", "denis1985@gmail.com");
+INSERT INTO Users(user_id, username, email)
+VALUES (11598, "David Jobs", "devid77jobs@gmail.com");
+
+INSERT INTO Borrowed_books(borrow_id, book_id, user_id, borrow_date, return_date)
+VALUES (125465, "25", 10008, "2020-03-01", "2024-03-22");
+INSERT INTO Borrowed_books(borrow_id, book_id, user_id, borrow_date, return_date)
+VALUES (178865, "80", 10745, "2024-03-21", "2024-03-15");
+INSERT INTO Borrowed_books(borrow_id, book_id, user_id, borrow_date, return_date)
+VALUES (465, "15", 11598, "2024-03-01", "2024-03-09");

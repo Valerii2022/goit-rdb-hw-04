@@ -1,0 +1,10 @@
+SELECT order_details.id, order_details.order_id, orders.date, order_details.quantity, order_details.product_id, products.name as product_name, products.unit as products_unit, products.price as products_price, products.supplier_id as supplier_id, suppliers.name as suppliers_name, suppliers.contact as suppliers_contact, suppliers.address as suppliers_address, suppliers.city as suppliers_city, suppliers.postal_code as suppliers_postal_code, suppliers.country as suppliers_country, suppliers.phone as suppliers_phone, products.category_id as category_id, categories.name as categories_name, categories.description as categories_description, orders.customer_id, customers.name as customers_name, customers.contact as customers_contact, customers.address as customer_address, customers.city as customers_city, customers.postal_code as customers_postal_code, customers.country as customers_country, orders.employee_id, employees.last_name as employees_last_name, employees.first_name as employees_first_name, employees.birthdate as employees_birthdate, employees.photo as employees_photo, employees.notes as employees_notes,orders.shipper_id, shippers.name as shippers_name, shippers.phone as shippers_phone
+FROM orders
+INNER JOIN order_details ON orders.id = order_details.order_id
+INNER JOIN shippers ON orders.shipper_id = shippers.id
+INNER JOIN products ON order_details.product_id = products.id 
+INNER JOIN suppliers ON products.supplier_id = suppliers.id
+INNER JOIN categories ON products.category_id = categories.id
+INNER JOIN employees ON orders.employee_id = employees.employee_id
+INNER JOIN customers ON orders.customer_id = customers.id
+ORDER BY order_details.id ASC
